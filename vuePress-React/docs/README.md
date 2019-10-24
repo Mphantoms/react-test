@@ -14,3 +14,5 @@
 [2.react单元测试策略详解](/other/rtac.md)
 
 ### React单元测试实际使用
+
+### [总结](/other/last.md)

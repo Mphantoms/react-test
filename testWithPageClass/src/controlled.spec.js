@@ -14,21 +14,21 @@ test('submit form', () => {
   firstName.simulate('change', {
     target: {
       name: 'firstName',
-      value: "kevin",
+      value: "li",
     }
   });
   const lastName = wrapper.find('#lastName')
   lastName.simulate('change', {
     target: {
       name: 'lastName',
-      value: "wang",
+      value: "xiaoming",
     }
   });
 
   const form = wrapper.find('form');
   form.simulate('submit', {preventDefault:() => {}});
 
-  expect(onSubmit).toHaveBeenCalledWith('kevin wang');
+  expect(onSubmit).toHaveBeenCalledWith('li xiaoming');
 });
 
 
@@ -58,9 +58,9 @@ test('submit form with pageObject', () => {
   const onSubmit = jest.fn();
   const wrapper = shallow(<Controlled onSubmit={onSubmit}/>)
   const page = new Page(wrapper);
-  page.fill('firstName', 'kevin');
-  page.fill('lastName', 'wang');
+  page.fill('firstName', 'li');
+  page.fill('lastName', 'xiaoming');
   page.submit();
 
-  expect(onSubmit).toHaveBeenCalledWith('kevin wang');
+  expect(onSubmit).toHaveBeenCalledWith('li xiaoming');
 });
