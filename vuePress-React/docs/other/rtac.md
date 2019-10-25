@@ -4,7 +4,32 @@
 ![An image](../images/2.png)
 
 1.actions 测试
+```javascript
+//actions.js
+export const saveUserComments = (comments) => ({
+  type: 'saveUserComments',
+  payload: {
+    comments,
+  },
+})
+//actions.test.js
+import * as actions from './actions'
 
+test('should dispatch saveUserComments action with fetched user comments', () => {
+  const comments = []
+  const expected = {
+    type: 'saveUserComments',
+    payload: {
+      comments: [],
+    },
+  }
+  
+  const result = actions.saveUserComments(comments)
+
+  expect(result).toEqual(expected)
+})
+
+```
 2.reducer 测试
 
 3.selector 测试
